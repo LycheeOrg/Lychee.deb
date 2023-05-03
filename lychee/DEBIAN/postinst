@@ -1,0 +1,44 @@
+#!/bin/sh
+# This `DEBIAN/postinst` script is run post-installation
+set -e
+
+case "$1" in
+    configure)
+        # Make sure owner of Lychee is www-data
+        chown -R www-data:www-data /var/www/html/Lychee
+
+        # set up .env
+        cp /usr/share/Lychee/.env /var/www/html/Lychee/.env
+
+        cd /var/www/html/Lychee
+        php artisan key:generate
+
+        # migrate to sql database
+        php artisan migrate --force
+
+        # enable Lychee conf (directory & port)
+        a2enconf 001-lychee-dir.conf
+
+        # enable mod-rewrite
+        a2enmod rewrite
+
+        # enable lychee default 8080 site
+        a2ensite 001-lychee-test.conf
+
+        # restart apache2
+        service apache2 restart
+
+        # add to host files
+        echo "" >> /etc/hosts 2>/dev/null || true
+        echo "127.0.0.1 lychee.test" >> /etc/hosts 2>/dev/null || true
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+

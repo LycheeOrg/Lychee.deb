@@ -1,0 +1,25 @@
+#!/bin/sh
+# This `DEBIAN/postinst` script is run post-installation
+set -e
+
+# remove .env
+rm /usr/share/Lychee/.env
+
+# remove all Lychee (files, config etc)
+rm -fr /var/www/html/Lychee
+
+# Disable site
+a2dissite 001-lychee-test.conf
+# remove site
+rm /etc/apache2/sites-available/001-lychee-test.conf
+
+# Disable conf
+a2disconf 001-lychee-dir.conf
+# remove conf
+rm /etc/apache2/conf/001-lychee-dir.conf
+
+# restart apache2
+service apache2 restart
+
+# Remove from host file
+sed '/^127.0.0.1 lychee.test/d' /etc/hosts > /etc/hosts 2>/dev/null || true

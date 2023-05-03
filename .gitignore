@@ -1,0 +1,3 @@
+*.deb
+*.orig.tar.xz
+**/var/www/html/lychee
