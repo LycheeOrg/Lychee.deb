@@ -13,9 +13,9 @@ RUN \
 
 WORKDIR src/
 
-COPY lychee-4.7.3-1_amd64.deb .
+COPY lychee-4.7.4-1_amd64.deb .
 
-RUN apt install -y ./lychee-4.7.3-1_amd64.deb
+RUN apt install -y ./lychee-4.7.4-1_amd64.deb
 
 EXPOSE 8080
 
