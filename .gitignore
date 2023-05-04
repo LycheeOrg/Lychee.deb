@@ -1,3 +1,8 @@
+# We ignore any built .deb images
 *.deb
+
+# Some other building process require/create this
 *.orig.tar.xz
-**/var/www/html/lychee
+
+# We directly fetch Lychee from release so We don't need it here
+**/var/www/html/Lychee
