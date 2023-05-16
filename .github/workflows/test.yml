@@ -24,7 +24,7 @@ jobs:
           access_token: ${{ github.token }}
 
   exec:
-    name: 1️⃣ PHP - Syntax errors
+    name: 1️⃣ Make
     runs-on: ubuntu-latest
     needs:
       - kill_previous
