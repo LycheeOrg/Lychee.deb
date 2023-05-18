@@ -5,7 +5,7 @@ export DEBEMAIL="lychee@viguier.nl"
 export DEBFULLNAME="Benoit Viguier"
 
 # Select version
-VERSION="4.8.1"
+VERSION="4.9.0"
 PATCH="-1"
 
 # RM previous version
