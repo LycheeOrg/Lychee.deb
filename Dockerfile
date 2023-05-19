@@ -13,10 +13,10 @@ RUN \
 
 WORKDIR src/
 
-COPY lychee-4.9.0-1_amd64.deb .
+COPY lychee-4.9.1-1_amd64.deb .
 
 RUN apt update
-RUN apt install -y ./lychee-4.9.0-1_amd64.deb
+RUN apt install -y ./lychee-4.9.1-1_amd64.deb
 
 EXPOSE 8080
 
