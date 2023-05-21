@@ -1,7 +1,7 @@
 DEBFILE=$(wildcard *.deb)
 
 build:
-	# php src/export.php
+	php src/export.php
 	docker build . -t lychee-package --progress plain
 
 run:
