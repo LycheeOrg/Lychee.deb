@@ -9,3 +9,6 @@
 
 .php-cs-fixer.cache
 vendor/*
+Dockerfile
+tmp/
+lychee-*/
