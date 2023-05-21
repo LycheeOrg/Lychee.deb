@@ -1,3 +1,11 @@
+<?php
+
+namespace LycheeOrg\LycheDeb;
+
+function dockerTemplate(string $debFile): string
+{
+
+	return <<<END
 FROM debian:bookworm-slim
 
 # Set version label
@@ -13,10 +21,10 @@ RUN \
 
 WORKDIR src/
 
-COPY lychee-4.9.1-1_amd64.deb .
+COPY {$debFile} .
 
 RUN apt update
-RUN apt install -y ./lychee-4.9.1-1_amd64.deb
+RUN apt install -y ./{$debFile}
 
 RUN chown -R www-data:www-data /var/www/html/Lychee/storage/logs && \
     chmod -R 775 /var/www/html/Lychee/storage/logs
@@ -25,3 +33,6 @@ RUN chown -R www-data:www-data /var/www/html/Lychee/storage/logs && \
 EXPOSE 8080
 
 CMD apachectl -D FOREGROUND
+
+END;
+}

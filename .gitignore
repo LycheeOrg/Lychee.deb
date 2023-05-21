@@ -6,3 +6,6 @@
 
 # We directly fetch Lychee from release so We don't need it here
 **/var/www/html/Lychee
+
+.php-cs-fixer.cache
+vendor/*

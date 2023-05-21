@@ -1,0 +1,8 @@
+includes:
+	- vendor/lychee-org/phpstan-lychee/phpstan.neon
+
+parameters:
+	checkGenericClassInNonGenericObjectType: false
+	treatPhpDocTypesAsCertain: false
+	paths:
+		- src
