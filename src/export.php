@@ -124,6 +124,6 @@ if (!file_exists($path['package-web-vendor'])) {
 system("DEBEMAIL=lychee@viguier.nl DEBFULLNAME=Benoit\ Viguier dpkg-deb --build --root-owner-group " . $package_name);
 
 // Nuke the package
-// system('rm -fr ' . $path['package']);
+system('rm -fr ' . $path['package']);
 
 file_put_contents($path['Dockerfile'], dockerTemplate($package_name_deb));

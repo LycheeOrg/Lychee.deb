@@ -1,6 +1,9 @@
 DEBFILE=$(wildcard *.deb)
 
-build:
+vendor:
+	composer install
+
+build: vendor
 	php src/export.php
 	docker build . -t lychee-package --progress plain
 

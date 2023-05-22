@@ -12,3 +12,4 @@ vendor/*
 Dockerfile
 tmp/
 lychee-*/
+.vscode
