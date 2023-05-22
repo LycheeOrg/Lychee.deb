@@ -1,0 +1,28 @@
+{
+    "name": "lychee-org/lyche-deb",
+    "type": "project",
+    "require": {
+        "lychee-org/phpstan-lychee": "^v1.0.1",
+        "friendsofphp/php-cs-fixer": "^3.3",
+        "symfony/var-dumper": "6.3.x-dev"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "LycheeOrg\\LycheDeb\\": "src/"
+        }
+    },
+
+    "scripts": {
+        "fix-code-style": [
+            "vendor/bin/php-cs-fixer fix -v --config=.php-cs-fixer.php ./src/"
+        ],
+        "validate-code-style": [
+            "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix -v --diff --dry-run --config=.php-cs-fixer.php ./src/"
+        ],
+        "phpstan": [
+            "vendor/bin/phpstan analyze"
+        ]
+    },
+    "minimum-stability": "dev"
+}

@@ -28,6 +28,6 @@ Depends: apache2 (>= 2.4),
   libapache2-mod-php8.2 (>= 8.2),
   php-common (>= 8.2),
   libimage-exiftool-perl (>= 12)
-Version: 4.8.0-1
+Version: 4.9.2-1
 Description: set up a Lychee gallery server
  Provide a Lychee installation that is quick and easy to install

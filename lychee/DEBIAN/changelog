@@ -1,3 +1,49 @@
+lychee (4.9.2-1) UNRELEASED; urgency=low
+
+  * Remove hashes from CSP when using log-viewer
+  * Remove duplicate link. Tweak comment
+
+  -- Benoit Viguier <lychee@viguier.nl>  Mon, 22 May  2023 12:00:00 +0200
+
+lychee (4.9.1-1) UNRELEASED; urgency=low
+
+  * Fixes #1855 - update Makefile
+  * Fix version 4.9 log-viewer paths hard coding
+
+  -- Benoit Viguier <lychee@viguier.nl>  Fri, 19 May  2023 12:00:00 +0200
+
+lychee (4.9.0-1) UNRELEASED; urgency=low
+
+  * Remove public option from album ordering: no longer supported
+  * Fix SQL error on removing public status from album
+  * Remove homemade Log solution, add support log-viewer
+
+  -- Benoit Viguier <lychee@viguier.nl>  Thu, 18 May  2023 12:00:00 +0200
+
+lychee (4.8.1-1) UNRELEASED; urgency=low
+
+  * Improved support of migration very old versions (untestable code)ildyria
+  * Add backend implementation to use file's last modified time
+    > Now support last_modified_time when uploading file without exif data.
+  * Fix left/right in photo view of tag albums
+  * Support API documentation
+  * Composer update + fix php stan complaints
+  * fixes Mass assignment problem in Access Permissions
+
+  -- Benoit Viguier <lychee@viguier.nl>  Mon, 15 May  2023 12:00:00 +0200
+
+lychee (4.8.0-1) UNRELEASED; urgency=low
+
+  * Use access permissions instead of base_album table to determine access rights
+
+  -- Benoit Viguier <lychee@viguier.nl>  Fri, 5 May 2023 12:00:00 +0200
+
+lychee (4.7.4-1) UNRELEASED; urgency=low
+
+  * Make it possible to fetch random image without needing to be public & starred
+
+  -- Benoit Viguier <lychee@viguier.nl>  Thu, 4 May 2023 12:00:00 +0200
+
 lychee (4.7.3-1) UNRELEASED; urgency=low
 
   * Initial release.

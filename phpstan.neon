@@ -1,0 +1,11 @@
+includes:
+	- vendor/lychee-org/phpstan-lychee/phpstan.neon
+
+parameters:
+	checkGenericClassInNonGenericObjectType: false
+	treatPhpDocTypesAsCertain: false
+	paths:
+		- src
+
+	ignoreErrors:
+		- '#Function "dd\(\)" cannot be used/left in the code: seems you missed some dd debugging function#'
