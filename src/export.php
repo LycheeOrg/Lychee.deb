@@ -3,7 +3,6 @@
 namespace LycheeOrg\LycheDeb;
 
 $root_path = dirname(__DIR__);
-putenv('TMPDIR=' . $root_path . '/tmp');
 
 include $root_path . '/vendor/autoload.php';
 include 'DockerTemplate.php';
