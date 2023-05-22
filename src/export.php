@@ -5,19 +5,16 @@ namespace LycheeOrg\LycheDeb;
 $root_path = dirname(__DIR__);
 putenv('TMPDIR=' . $root_path . '/tmp');
 
-
 include $root_path . '/vendor/autoload.php';
 include 'DockerTemplate.php';
 
-use ZipArchive;
-
 use function Safe\chdir;
+use function Safe\file_put_contents;
 use function Safe\mkdir;
 use function Safe\rename;
 use function Safe\scandir;
 use function Safe\system;
 use function Safe\unlink;
-use function Safe\file_put_contents;
 
 // Select future version number
 $version = '4.9.2';
@@ -86,7 +83,7 @@ if ($fetch_zip) {
 }
 
 // Unzip
-$zip = new ZipArchive();
+$zip = new \ZipArchive();
 $res = $zip->open($path['zip']);
 if ($res === true) {
 	$zip->extractTo($path['package-web']);

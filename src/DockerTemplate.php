@@ -4,7 +4,6 @@ namespace LycheeOrg\LycheDeb;
 
 function dockerTemplate(string $debFile): string
 {
-
 	return <<<END
 FROM debian:bookworm-slim
 
