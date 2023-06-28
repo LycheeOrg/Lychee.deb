@@ -16,7 +16,7 @@ use function Safe\system;
 use function Safe\unlink;
 
 // Select future version number
-$version = '4.9.3';
+$version = '4.9.4';
 $patch = '-1';
 $is_release = count($argv) === 1;
 $fetch_zip = $is_release;
